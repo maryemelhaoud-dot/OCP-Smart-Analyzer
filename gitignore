@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+env/
+
+# Base de données générée
+database.db
+
+# Modèle entraîné (généré par model.py)
+modele.pkl
+
+# Environnement
+.env
+
+# OS / éditeurs
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
