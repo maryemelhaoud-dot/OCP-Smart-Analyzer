@@ -52,7 +52,8 @@ ocp-smart-analyzer/
 git clone https://github.com/maryemelhaoud-dot/OCP-Smart-Analyzer.git
 cd OCP-Smart-Analyzer
 ```
- 2.Créer un environnement virtuel(Optionnel) 
+   2.Créer un environnement virtuel(Optionnel) 
+
 ```bash
 python -m venv venv
 venv\Scripts\activate      # Windows
