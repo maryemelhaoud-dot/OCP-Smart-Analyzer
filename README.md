@@ -52,11 +52,12 @@ ocp-smart-analyzer/
 git clone https://github.com/maryemelhaoud-dot/OCP-Smart-Analyzer.git
 cd OCP-Smart-Analyzer
 ```
+2.(Optionnel) Créer un environnement virtuel
+python -m venv venv
+venv\Scripts\activate      # Windows
+source venv/bin/activate   # macOS / Linux
 3. Installer les dépendances
-```bash
 pip install -r requirements.txt
-```
-
 ## Utilisation
 
 1. **Générer le dataset** (si besoin)
