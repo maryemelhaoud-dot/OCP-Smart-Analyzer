@@ -4,13 +4,11 @@ from datetime import datetime
 DB_PATH = "database.db"
 
 def get_connection():
-    """Crée et retourne une connexion à la base de données"""
     conn = sqlite3.connect(DB_PATH)
-    conn.row_factory = sqlite3.Row  # permet d'accéder aux colonnes par nom
+    conn.row_factory = sqlite3.Row 
     return conn
 
 def init_db():
-    """Crée les tables si elles n'existent pas encore"""
     conn = get_connection()
     cursor = conn.cursor()
 
@@ -43,7 +41,6 @@ def init_db():
     print("Base de données initialisée")
 
 def ajouter_lot(p2o5, humidite, temperature, qualite):
-    """Ajoute un nouveau lot dans la BD et retourne son id"""
     conn = get_connection()
     cursor = conn.cursor()
     cursor.execute("""
@@ -56,7 +53,6 @@ def ajouter_lot(p2o5, humidite, temperature, qualite):
     return lot_id
 
 def ajouter_prediction(lot_id, qualite_predite, confiance):
-    """Ajoute une prédiction liée à un lot"""
     conn = get_connection()
     cursor = conn.cursor()
     cursor.execute("""
@@ -67,7 +63,6 @@ def ajouter_prediction(lot_id, qualite_predite, confiance):
     conn.close()
 
 def get_stats():
-    """Calcule les statistiques pour le dashboard"""
     conn = get_connection()
     cursor = conn.cursor()
 
@@ -99,7 +94,6 @@ def get_stats():
     }
 
 def get_derniers_lots(limite=10):
-    """Retourne les derniers lots ajoutés"""
     conn = get_connection()
     cursor = conn.cursor()
     cursor.execute("""
@@ -110,7 +104,6 @@ def get_derniers_lots(limite=10):
     return lots
 
 def get_tous_lots():
-    """Retourne tous les lots pour la page Datasets"""
     conn = get_connection()
     cursor = conn.cursor()
     cursor.execute("SELECT * FROM lots ORDER BY id DESC")
